@@ -28,6 +28,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Pin.Acts.PinByImagePoint,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Cnds.Else,
+		C3.Plugins.System.Cnds.CompareBoolVar,
+		C3.Plugins.System.Acts.SetBoolVar,
+		C3.Plugins.Sprite.Cnds.IsOnLayer,
+		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Touch.Cnds.OnTouchStart,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
@@ -43,7 +47,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Behaviors.Tween.Cnds.IsAnyPlaying,
 		C3.Plugins.Sprite.Exps.UID,
-		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.Sprite.Exps.ImagePointY,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
 		C3.Plugins.System.Cnds.TriggerOnce,
@@ -91,7 +94,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Acts.SetVisible,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Acts.GoToLayoutByName,
-		C3.Plugins.Audio.Acts.PlayByName
+		C3.Plugins.Audio.Acts.PlayByName,
+		C3.Plugins.Text.Acts.SetOpacity,
+		C3.Behaviors.Tween.Acts.TweenTwoProperties,
+		C3.Behaviors.Tween.Cnds.OnTweensFinished
 	];
 };
 self.C3_JsPropNameTable = [
@@ -147,6 +153,9 @@ self.C3_JsPropNameTable = [
 	{Title: 0},
 	{SwitchGateUID: 0},
 	{SwitchHandle: 0},
+	{TutorialWire: 0},
+	{Step: 0},
+	{TutorialClip: 0},
 	{Inputs: 0},
 	{Gates: 0},
 	{Wires: 0},
@@ -165,7 +174,8 @@ self.C3_JsPropNameTable = [
 	{SwitchUID: 0},
 	{InputActive: 0},
 	{SFX: 0},
-	{SFXName: 0}
+	{SFXName: 0},
+	{Tutorial: 0}
 ];
 
 self.InstanceType = {
@@ -201,6 +211,8 @@ self.InstanceType = {
 	Audio: class extends self.IInstance {},
 	Title: class extends self.ISpriteInstance {},
 	SwitchHandle: class extends self.ISpriteInstance {},
+	TutorialWire: class extends self.ISpriteInstance {},
+	TutorialClip: class extends self.ISpriteInstance {},
 	Inputs: class extends self.ISpriteInstance {},
 	Gates: class extends self.ISpriteInstance {},
 	Wires: class extends self.ISpriteInstance {},
